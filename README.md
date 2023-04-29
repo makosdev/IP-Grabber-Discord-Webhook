@@ -10,8 +10,7 @@ To use this code, simply copy and paste the code into an HTML file and open it i
 
 ## Video Link
 
-Check out the video that this code is a part of for more information on the importance of using a VPN: [Video](https://www.youtube.com/watch?v=EXAMPLE).
-
+Check out the video that this code is a part of for more information on the importance of using a VPN: [Video](https://youtu.be/V5Gl8yq1RaE)
 ## Disclaimer
 
 This code is meant to be used for educational purposes only. Do not use this code to harm others or to engage in any illegal activity. Always use a VPN when browsing the internet to protect your online privacy and security.
